@@ -1,130 +1,221 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Cake Shop</title>
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Ghezas - Blueyframe</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
+
 <body>
 
-  <!-- Navbar -->
+<!-- NAVBAR -->
+
+<header>
+
   <nav class="navbar">
-    <div class="logo">🍰 Sweet Cake</div>
+
+    <h1 class="logo">
+      BlueyFrame
+    </h1>
 
     <ul class="nav-links">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#contact">Kontak</a></li>
+
+      <li>
+        <a href="#home">Beranda</a>
+      </li>
+
+      <li>
+        <a href="#portfolio">Portfolio</a>
+      </li>
+
+      <li>
+        <a href="#about">Tentang</a>
+      </li>
+
+      <li>
+        <a href="#contact">Kontak</a>
+      </li>
+
     </ul>
 
-    <div class="auth-btn">
-      <a href="login/login.html" class="btn-login">Login</a>
+    <div id="authArea">
+
+      <a href="login/login.html"
+      class="login-btn">
+
+        Login
+
+      </a>
+
     </div>
+
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Fresh & Sweet Cake Everyday 🎂</h1>
-      <p>Cake lembut dengan rasa premium dan tampilan aesthetic.</p>
-      <a href="#menu" class="btn-primary">Lihat Menu</a>
+</header>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+  <div class="hero-text">
+
+    <h2>
+      Bercerita dalam setiap detail kehidupan dan kenangan
+    </h2>
+
+    <p>
+      Website portfolio fotografi milik Gheza
+    </p>
+
+    <button onclick="scrollPortfolio()">
+      Lihat Portfolio
+    </button>
+
+  </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio" class="portfolio">
+
+  <h2>Portfolio</h2>
+
+  <div class="slider-container">
+
+    <button class="prev">
+      &#10094;
+    </button>
+
+    <div class="slider">
+
+      <img src="assets/foto1.jpg">
+      <img src="assets/foto2.jpg">
+      <img src="assets/foto3.jpg">
+      <img src="assets/foto4.jpg">
+
     </div>
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800" alt="cake">
-    </div>
-  </section>
+    <button class="next">
+      &#10095;
+    </button>
 
-  <!-- Menu -->
-  <section id="menu" class="menu-section">
-    <h2>Menu Favorit</h2>
+  </div>
 
-    <div class="menu-container">
+</section>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=800">
-        <h3>Strawberry Cake</h3>
-        <p>Rp 120.000</p>
-      </div>
+<!-- ABOUT -->
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800">
-        <h3>Chocolate Cake</h3>
-        <p>Rp 150.000</p>
-      </div>
+<section id="about" class="about">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=800">
-        <h3>Pink Donut</h3>
-        <p>Rp 20.000</p>
-      </div>
+  <div class="about-content">
 
-    </div>
-  </section>
+    <h2>Tentang Pemilik</h2>
 
-  <!-- Tentang -->
-  <section id="about" class="about">
-    <div class="about-text">
-      <h2>Tentang Cake Shop</h2>
-      <p>
-        Sweet Cake adalah toko kue modern dengan konsep aesthetic,
-        soft pink, dan cita rasa premium yang cocok untuk ulang tahun,
-        wedding, maupun acara spesial lainnya.
-      </p>
-    </div>
-  </section>
+    <p>
+      Halo! Kenalin aku Ghesty Rihan Nur Izzati, panggil aja gheza. Aku seorang siswi SMAN 8 YOgyakarta. Aku sangat menyukai fotografi dan sinematografi. Aku berharap website ini bisa membuat orang lain melihat karya-karyaku. Teruslah berkarya dan bercerita ^_____^
+    </p>
 
-  <!-- Video -->
-  <section class="video-section">
-    <h2>Video Cake Shop</h2>
+  </div>
 
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/8lJNJw0W7tQ"
-        title="YouTube video"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
+</section>
 
-  <!-- Maps -->
-  <section class="maps-section">
-    <h2>Lokasi Kami</h2>
+<!-- YOUTUBE -->
 
-    <div class="maps-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18..."
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
-  </section>
+<section class="youtube-section">
 
-  <!-- Kontak -->
-  <section id="contact" class="contact">
-    <h2>Kontak Kami</h2>
+  <h2>Video</h2>
 
-    <p>📞 Reservasi: <a href="tel:08123456789">0812-3456-789</a></p>
+  <div class="video-wrapper">
 
-    <div class="socials">
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://wa.me/628123456789" target="_blank">WhatsApp</a>
-    </div>
-  </section>
+    <!-- GANTI LINK YOUTUBE -->
+    <iframe
+      src="https://www.youtube.com/embed/WkEpw5r_SjQ"
+      title="Youtube"
+      allowfullscreen>
+    </iframe>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Sweet Cake Shop</p>
-  </footer>
+  </div>
 
-  <script src="script.js"></script>
+</section>
+
+<!-- MAPS -->
+
+<section class="maps-section">
+
+  <h2>Lokasi</h2>
+
+  <div class="map-wrapper">
+
+    <!-- GANTI LINK MAPS -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18"
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <h2>Ketahui aku lebih lanjut lewat sosial media!</h2>
+
+  <div class="socials">
+
+    <a href="https://instagram.com/ghes2z"
+    target="_blank"
+    class="social-card">
+
+      <i class="fa-brands fa-instagram"></i>
+      Instagram
+
+    </a>
+
+    <a href="https://twitter.com/ghes2z"
+    target="_blank"
+    class="social-card">
+
+      <i class="fa-brands fa-x-twitter"></i>
+      Twitter
+
+    </a>
+
+    <a href="mailto:gegeworks16@gmail.com"
+    target="_blank"
+    class="social-card">
+
+      <i class="fa-solid fa-envelope"></i>
+      Email
+
+</a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 BlueyFrame - ghezas
+  </p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
