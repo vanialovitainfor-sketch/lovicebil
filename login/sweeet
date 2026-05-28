@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+  <form class="login-form">
+
+    <h2>Login</h2>
+
+    <input type="text" placeholder="Username" id="username">
+
+    <input type="password" placeholder="Password" id="password">
+
+    <button type="button" onclick="login()">Login</button>
+
+    <p>
+      <a href="forgot.html">Lupa Password?</a>
+    </p>
+
+    <p>
+      Belum punya akun?
+      <a href="register.html">Daftar</a>
+    </p>
+
+  </form>
+
+</div>
+
+<script>
+
+function login(){
+
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+
+  if(username === "admin" && password === "12345"){
+    alert("Login berhasil!");
+    window.location.href = "index.html";
+  }else{
+    alert("Username atau Password salah!");
+  }
+
+}
+
+</script>
+
+</body>
+</html>
