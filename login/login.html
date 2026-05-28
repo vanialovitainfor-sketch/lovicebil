@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
   <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <title>Login dulu</title>
+
+  <link rel="stylesheet"
+  href="login.css">
+
 </head>
+
 <body>
 
-<div class="form-container">
+<div class="login-container">
 
-  <form class="login-form">
+  <h2>Login dulu yap</h2>
 
-    <h2>Login</h2>
+  <form id="loginForm">
 
-    <input type="text" placeholder="Username" id="username">
+    <input
+    type="text"
+    id="username"
+    placeholder="Username kamu"
+    required>
 
-    <input type="password" placeholder="Password" id="password">
+    <input
+    type="password"
+    id="password"
+    placeholder="Password kamu apa"
+    required>
 
-    <button type="button" onclick="login()">Login</button>
-
-    <p>
-      <a href="forgot.html">Lupa Password?</a>
-    </p>
-
-    <p>
-      Belum punya akun?
-      <a href="register.html">Daftar</a>
-    </p>
+    <button type="submit">
+      Login nih
+    </button>
 
   </form>
 
+  <p>
+    Waduh, kamu belum punya akun?
+    <a href="register.html">
+      Daftar dulu yuk
+    </a>
+  </p>
+
+  <p>
+    <a href="forgot.html">
+      Gawat, aku lupa Password!
+    </a>
+  </p>
+
 </div>
 
-<script>
-
-function login(){
-
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-
-  if(username === "heri" && password === "123"){
-    alert("Login berhasil!");
-    window.location.href = "index.html";
-  }else{
-    alert("Username atau Password salah!");
-  }
-
-}
-
-</script>
+<script src="login.js"></script>
 
 </body>
 </html>
