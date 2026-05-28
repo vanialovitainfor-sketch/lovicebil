@@ -1,0 +1,195 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff7fa;
+  color:#444;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 10%;
+  background:#ffd6e7;
+  position:sticky;
+  top:0;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+  color:#ff4f8b;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+}
+
+.btn-login{
+  background:#ff6fa5;
+  padding:10px 20px;
+  color:white;
+  border-radius:20px;
+  text-decoration:none;
+}
+
+/* Hero */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px 10%;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.hero-text h1{
+  font-size:50px;
+  color:#ff4f8b;
+}
+
+.hero-text p{
+  margin:20px 0;
+}
+
+.btn-primary{
+  display:inline-block;
+  padding:12px 25px;
+  background:#ff6fa5;
+  color:white;
+  border-radius:25px;
+  text-decoration:none;
+}
+
+.hero-image img{
+  width:400px;
+  border-radius:30px;
+}
+
+/* Menu */
+.menu-section{
+  padding:60px 10%;
+  text-align:center;
+}
+
+.menu-container{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+.card{
+  background:white;
+  width:280px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.card h3{
+  margin:15px 0;
+}
+
+/* About */
+.about{
+  padding:60px 10%;
+  background:#ffe8f1;
+  text-align:center;
+}
+
+/* Video */
+.video-section{
+  padding:60px 10%;
+  text-align:center;
+}
+
+.video-container iframe{
+  width:100%;
+  max-width:800px;
+  height:450px;
+  border-radius:20px;
+}
+
+/* Maps */
+.maps-section{
+  padding:60px 10%;
+  text-align:center;
+}
+
+.maps-container iframe{
+  width:100%;
+  height:400px;
+  border:none;
+  border-radius:20px;
+}
+
+/* Contact */
+.contact{
+  padding:60px 10%;
+  text-align:center;
+}
+
+.socials{
+  margin-top:20px;
+}
+
+.socials a{
+  margin:10px;
+  text-decoration:none;
+  background:#ff6fa5;
+  color:white;
+  padding:10px 20px;
+  border-radius:20px;
+}
+
+/* Footer */
+footer{
+  background:#ffd6e7;
+  text-align:center;
+  padding:20px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-image img{
+    width:100%;
+    margin-top:30px;
+  }
+
+  .navbar{
+    flex-direction:column;
+    gap:20px;
+  }
+
+}
