@@ -3,152 +3,112 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Cebil Cake's</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <header>
-
   <nav class="navbar">
 
-    <h1 class="logo">
-  🍰 Cebil Cake's
-</h1>
+    <h1 class="logo">🍰 Cebil Cake's</h1>
 
     <ul class="nav-links">
-
-      <li>
-        <a href="#home">Beranda</a>
-      </li>
-
-      <li>
-        <a href="#portfolio">Menu</a>
-      </li>
-
-      <li>
-        <a href="#about">Tentang</a>
-      </li>
-
-      <li>
-        <a href="#contact">Kontak</a>
-      </li>
-
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#portfolio">Menu</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#contact">Kontak</a></li>
     </ul>
 
     <div id="authArea">
-
-      <a href="login/login.html"
-      class="login-btn">
-
-        Login
-
-      </a>
-
+      <a href="login/login.html" class="login-btn">Login</a>
     </div>
 
   </nav>
-
 </header>
 
 <!-- HERO -->
-
 <section id="home" class="hero">
 
   <div class="hero-text">
-
-    <h2>
-  Manis, Lembut, dan Dibuat Dengan Penuh Cinta 🍓
-   </h2>
-
-    <p>
-     Toko cake modern dengan tampilan aesthetic dan rasa premium.
-    </p>
-
-    <button onclick="scrollPortfolio()">
+    <h2>Manis, Lembut, dan Dibuat Dengan Penuh Cinta 🍓</h2>
+    <p>Toko cake modern dengan tampilan aesthetic dan rasa premium.</p>
+    <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
       Lihat Menu
     </button>
-
   </div>
 
 </section>
 
 <!-- PORTFOLIO -->
-
 <section id="portfolio" class="portfolio">
 
-  <h2>Menu cake</h2>
+  <h2>Menu Cake</h2>
 
-  <div class="slider-container">
+  <div class="slider">
 
-    <button class="prev">
-      #ff69a6;
-    </button>
+    <div class="cake-card">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Cake 1">
+      <p class="price">Rp 25.000</p>
+    </div>
 
-   <div class="slider">
+    <div class="cake-card">
+      <img src="https://images.unsplash.com/photo-1519869325930-281384150729" alt="Cake 2">
+      <p class="price">Rp 30.000</p>
+    </div>
 
-  <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Kue Aesthetic 1">
-  <img src="https://images.unsplash.com/photo-1519869325930-281384150729" alt="Kue Aesthetic 2">
-  <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713" alt="Kue Aesthetic 3">
-  <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f" alt="Kue Aesthetic 4">
+    <div class="cake-card">
+      <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713" alt="Cake 3">
+      <p class="price">Rp 35.000</p>
+    </div>
 
-</div>
-    <button class="next">
-      #ffd9e8;
-    </button>
+    <div class="cake-card">
+      <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f" alt="Cake 4">
+      <p class="price">Rp 40.000</p>
+    </div>
 
   </div>
 
 </section>
 
 <!-- ABOUT -->
-
 <section id="about" class="about">
 
   <div class="about-content">
-
     <h2>Tentang Pemilik</h2>
 
     <p>
       Cebil Cake's adalah toko cake modern dengan konsep soft pink aesthetic yang menyediakan berbagai cake premium, dessert manis, dan pastry lezat untuk berbagai acara spesial seperti ulang tahun, wisuda, dan perayaan lainnya.
     </p>
-
   </div>
 
 </section>
 
 <!-- YOUTUBE -->
-
 <section class="youtube-section">
 
   <h2>Video</h2>
 
   <div class="video-wrapper">
 
-    <!-- GANTI LINK YOUTUBE -->
     <iframe
-      src="src="https://youtu.be/3NvvOVrm1uY?si=2tBUzBYN9IhGiweJ"
+      src="https://www.youtube.com/embed/3NvvOVrm1uY"
       title="Video kue aesthetic"
       allowfullscreen>
     </iframe>
 
-</div>
+  </div>
 
 </section>
 
 <!-- MAPS -->
-
 <section class="maps-section">
 
   <h2>Lokasi Toko</h2>
@@ -166,32 +126,24 @@
 
 </section>
 
-</section>
-
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
 
   <h2>Hubungi Cebil Cake's</h2>
 
   <div class="socials">
 
-    <!-- Kontak Person / Telepon -->
     <p class="reservation">
       📞 Kontak Person:
-      <a href="tel:08123456789">
-        0812-3456-789
-      </a>
+      <a href="tel:08123456789">0812-3456-789</a>
     </p>
 
-    <!-- Instagram -->
     <a href="https://www.instagram.com/" target="_blank" class="social-card">
       <i class="fa-brands fa-instagram"></i>
       Instagram
     </a>
 
-    <!-- Email -->
-    <a href="mailto:cebilcakes@gmail.com" target="_blank" class="social-card">
+    <a href="mailto:cebilcakes@gmail.com" class="social-card">
       <i class="fa-solid fa-envelope"></i>
       Email
     </a>
@@ -199,21 +151,6 @@
   </div>
 
 </section>
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-  <p>
-    © 2026 Cebil Cake's
-  </p>
-
-</footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
