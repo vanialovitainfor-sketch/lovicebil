@@ -1,3 +1,10 @@
+Berikut versi CSS yang sudah diubah menjadi tema **soft pink aesthetic** dan warna-warna kalem untuk **Cebil Cake's** 🍰🌸
+
+Kamu tinggal ganti semua isi `style.css` atau ubah warna-warnanya seperti berikut.
+
+---
+
+```css id="8x1mzc"
 *{
   margin:0;
   padding:0;
@@ -6,8 +13,8 @@
 }
 
 body{
-  background:#081b33;
-  color:white;
+  background:#fff4f8;
+  color:#5c4b51;
   overflow-x:hidden;
 }
 
@@ -24,13 +31,17 @@ body{
 
   padding:20px 8%;
 
-  background:rgba(0,0,0,0.3);
+  background:rgba(255, 228, 238, 0.8);
   backdrop-filter:blur(10px);
+
+  border-bottom:1px solid #ffd6e7;
 }
 
 .logo{
-  color:#8fd3ff;
+  color:#ff6fa5;
 }
+
+/* NAVIGATION */
 
 .nav-links{
   display:flex;
@@ -40,21 +51,29 @@ body{
 
 .nav-links a{
   text-decoration:none;
-  color:white;
+  color:#5c4b51;
   transition:0.3s;
+  font-weight:bold;
 }
 
 .nav-links a:hover{
-  color:#8fd3ff;
+  color:#ff6fa5;
 }
 
+/* LOGIN BUTTON */
+
 .login-btn{
-  background:#8fd3ff;
-  color:#081b33;
+  background:#ff9fc4;
+  color:white;
   text-decoration:none;
   padding:12px 25px;
   border-radius:30px;
   font-weight:bold;
+  transition:0.3s;
+}
+
+.login-btn:hover{
+  background:#ff6fa5;
 }
 
 /* HERO */
@@ -64,8 +83,8 @@ body{
 
   background:
   linear-gradient(
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5)
+    rgba(255, 240, 245, 0.5),
+    rgba(255, 240, 245, 0.5)
   ),
   url('assets/images/bg.jpg');
 
@@ -80,27 +99,42 @@ body{
   padding:20px;
 }
 
+.hero-text{
+  background:rgba(255,255,255,0.5);
+  padding:40px;
+  border-radius:30px;
+  backdrop-filter:blur(5px);
+}
+
 .hero-text h2{
   font-size:55px;
   margin-bottom:20px;
+  color:#ff6fa5;
 }
 
 .hero-text p{
   margin-bottom:25px;
   font-size:18px;
+  color:#6e5b61;
 }
 
 .hero button{
   padding:15px 35px;
   border:none;
   border-radius:40px;
-  background:#8fd3ff;
-  color:#081b33;
+  background:#ff9fc4;
+  color:white;
   font-weight:bold;
   cursor:pointer;
+  transition:0.3s;
 }
 
-/* PORTFOLIO */
+.hero button:hover{
+  background:#ff6fa5;
+  transform:scale(1.05);
+}
+
+/* MENU / PORTFOLIO */
 
 .portfolio{
   padding:100px 8%;
@@ -109,6 +143,7 @@ body{
 .portfolio h2{
   text-align:center;
   margin-bottom:40px;
+  color:#ff6fa5;
 }
 
 .slider-container{
@@ -131,9 +166,11 @@ body{
 
   object-fit:cover;
 
-  border-radius:20px;
+  border-radius:25px;
 
   transition:0.3s;
+
+  box-shadow:0 10px 20px rgba(255, 182, 193, 0.3);
 }
 
 .slider img:hover{
@@ -142,12 +179,19 @@ body{
 
 .prev,
 .next{
-  background:#8fd3ff;
+  background:#ffb6d1;
   border:none;
   padding:15px;
   border-radius:50%;
   cursor:pointer;
   margin:10px;
+  color:white;
+  transition:0.3s;
+}
+
+.prev:hover,
+.next:hover{
+  background:#ff6fa5;
 }
 
 /* ABOUT */
@@ -155,11 +199,17 @@ body{
 .about{
   padding:100px 8%;
   text-align:center;
+  background:#ffeaf3;
 }
 
 .about-content{
   max-width:700px;
   margin:auto;
+}
+
+.about h2{
+  color:#ff6fa5;
+  margin-bottom:20px;
 }
 
 /* YOUTUBE */
@@ -169,13 +219,20 @@ body{
   text-align:center;
 }
 
+.youtube-section h2{
+  color:#ff6fa5;
+  margin-bottom:30px;
+}
+
 .video-wrapper iframe{
   width:100%;
   max-width:900px;
   height:500px;
 
   border:none;
-  border-radius:20px;
+  border-radius:25px;
+
+  box-shadow:0 10px 20px rgba(255,182,193,0.3);
 }
 
 /* MAPS */
@@ -183,6 +240,12 @@ body{
 .maps-section{
   padding:100px 8%;
   text-align:center;
+  background:#ffeaf3;
+}
+
+.maps-section h2{
+  color:#ff6fa5;
+  margin-bottom:30px;
 }
 
 .map-wrapper iframe{
@@ -190,7 +253,9 @@ body{
   height:450px;
 
   border:none;
-  border-radius:20px;
+  border-radius:25px;
+
+  box-shadow:0 10px 20px rgba(255,182,193,0.3);
 }
 
 /* CONTACT */
@@ -198,6 +263,11 @@ body{
 .contact{
   padding:100px 8%;
   text-align:center;
+}
+
+.contact h2{
+  color:#ff6fa5;
+  margin-bottom:40px;
 }
 
 .socials{
@@ -208,19 +278,21 @@ body{
 }
 
 .social-card{
-  background:#10294d;
+  background:#fff0f5;
   padding:20px 30px;
   border-radius:20px;
 
   text-decoration:none;
-  color:white;
+  color:#5c4b51;
 
   transition:0.3s;
+
+  box-shadow:0 5px 15px rgba(255,182,193,0.2);
 }
 
 .social-card:hover{
-  background:#8fd3ff;
-  color:#081b33;
+  background:#ff9fc4;
+  color:white;
 
   transform:translateY(-5px);
 }
@@ -234,7 +306,7 @@ body{
 }
 
 .logout-btn{
-  background:#ff5f7a;
+  background:#ff8fab;
   color:white;
 
   border:none;
@@ -255,7 +327,8 @@ body{
 footer{
   padding:30px;
   text-align:center;
-  background:#061423;
+  background:#ffd6e7;
+  color:#5c4b51;
 }
 
 /* RESPONSIVE */
@@ -281,8 +354,6 @@ footer{
   }
 
 }
-
-
-
+```
 
 
