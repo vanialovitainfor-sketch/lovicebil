@@ -1,13 +1,14 @@
-// register.js – versi diperbaiki
+// register.js – pakai CORS proxy agar bisa diakses dari GitHub Pages
 
 const API_BASE = 'https://herisusanta.my.id/javalogin/api/';
+const PROXY    = 'https://corsproxy.io/?';
 
 document.getElementById('registerForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const username = document.getElementById('username').value.trim();
-  const email    = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+  const username  = document.getElementById('username').value.trim();
+  const email     = document.getElementById('email').value.trim();
+  const password  = document.getElementById('password').value.trim();
   const btnSubmit = this.querySelector('button[type="submit"]');
 
   if (!username || !password) {
@@ -15,33 +16,35 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     return;
   }
 
-  const originalText = btnSubmit.textContent;
+  const originalText    = btnSubmit.textContent;
   btnSubmit.textContent = 'Memproses...';
-  btnSubmit.disabled = true;
+  btnSubmit.disabled    = true;
 
   try {
-    const res = await fetch(API_BASE + 'register', {
-      method: 'POST',
+    const res = await fetch(PROXY + encodeURIComponent(API_BASE + 'register'), {
+      method : 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept'      : 'application/json'
       },
       body: JSON.stringify({ username, email, password })
     });
 
     const text = await res.text();
     let data;
-    try { data = JSON.parse(text); } catch {
+    try {
+      data = JSON.parse(text);
+    } catch {
       console.error('Response bukan JSON:', text);
-      alert('Server mengembalikan response tidak terduga:\n' + text);
+      alert('Response tidak terduga dari server:\n' + text);
       return;
     }
 
-    console.log('Response dari API:', data);
+    console.log('Response API:', data);
 
     const berhasil =
       data.status === 'success' ||
-      data.success === true ||
+      data.success === true     ||
       data.message?.toLowerCase().includes('berhasil') ||
       data.message?.toLowerCase().includes('success');
 
@@ -54,13 +57,10 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     }
 
   } catch (err) {
-    console.error('Fetch error:', err);
-    alert(
-      'Tidak dapat terhubung ke server.\n\n' +
-      'Buka F12 → Console untuk melihat detail error.'
-    );
+    console.error('Error:', err);
+    alert('Gagal terhubung ke server. Cek koneksi internet kamu.');
   } finally {
     btnSubmit.textContent = originalText;
-    btnSubmit.disabled = false;
+    btnSubmit.disabled    = false;
   }
 });
