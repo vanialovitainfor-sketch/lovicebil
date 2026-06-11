@@ -1,25 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
+// welcome.js – tampilkan nama user & tombol logout di landing page
 
-    function goLogin() {
-        window.location.href = "login/index.html";
-    }
+const loggedUser = localStorage.getItem('loggedUser');
+const loginBtn   = document.getElementById('loginBtn');
 
-    function logout() {
-        localStorage.removeItem("username");
-        location.reload();
-    }
-
-    const user = localStorage.getItem("username");
-
-    if (user) {
-        document.getElementById("userInfo").innerText = "Halo, " + user;
-
-        document.getElementById("authArea").innerHTML = `
-            <button onclick="logout()" class="nav-cta">Logout</button>
-        `;
-    }
-
-    window.goLogin = goLogin;
-    window.logout = logout;
-
-});
+if (loggedUser && loginBtn) {
+  loginBtn.textContent = 'Logout (' + loggedUser + ')';
+  loginBtn.href        = '#';
+  loginBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    localStorage.removeItem('loggedUser');
+    localStorage.removeItem('role');
+    window.location.reload();
+  });
+}
