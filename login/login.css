@@ -1,39 +1,58 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+body{
+  background:#081b33;
 
-  <meta charset="UTF-8">
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  <title>Lupa Password Ya</title>
+  height:100vh;
 
-  <link rel="stylesheet"
-  href="login.css">
+  font-family:Arial;
+}
 
-</head>
+.login-container{
 
-<body>
+  background:#10294d;
 
-<div class="login-container">
+  width:350px;
 
-  <h2>Lupa Password Ya</h2>
+  padding:40px;
 
-  <form id="forgotForm">
+  border-radius:20px;
 
-    <input
-    type="text"
-    id="forgotUsername"
-    placeholder="Masukkan username kamu deh"
-    required>
+  color:white;
+}
 
-    <button type="submit">
-      Cek Passwordnya Apa
-    </button>
+.login-container h2{
+  text-align:center;
+  margin-bottom:20px;
+}
 
-  </form>
+input{
+  width:100%;
 
-</div>
+  padding:15px;
 
-<script src="login.js"></script>
+  margin:10px 0;
 
-</body>
-</html>
+  border:none;
+  border-radius:10px;
+}
+
+button{
+  width:100%;
+
+  padding:15px;
+
+  background:#8fd3ff;
+
+  border:none;
+  border-radius:10px;
+
+  font-weight:bold;
+  cursor:pointer;
+}
+
+a{
+  color:#8fd3ff;
+}
