@@ -1,75 +1,35 @@
-// login.js – pakai CORS proxy agar bisa diakses dari GitHub Pages
+// login.js – menggunakan localStorage (tanpa API)
 
-const API_BASE = 'https://herisusanta.my.id/javalogin/api/';
-
-// Proxy publik yang menambahkan header CORS ke setiap request
-const PROXY = 'https://corsproxy.io/?';
-
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
+document.getElementById('loginForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const username  = document.getElementById('username').value.trim();
-  const password  = document.getElementById('password').value.trim();
-  const btnSubmit = this.querySelector('button[type="submit"]');
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
 
   if (!username || !password) {
     alert('Username dan password tidak boleh kosong.');
     return;
   }
 
-  const originalText    = btnSubmit.textContent;
-  btnSubmit.textContent = 'Memproses...';
-  btnSubmit.disabled    = true;
+  // Ambil daftar user yang tersimpan di localStorage
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
 
-  try {
-    const res = await fetch(PROXY + encodeURIComponent(API_BASE + 'login'), {
-      method : 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept'      : 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    });
+  // Cek admin hardcoded
+  if (username === 'admin' && password === '123') {
+    localStorage.setItem('loggedUser', 'admin');
+    localStorage.setItem('role', 'admin');
+    window.location.href = '../admin/index.html';
+    return;
+  }
 
-    const text = await res.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      console.error('Response bukan JSON:', text);
-      alert('Response tidak terduga dari server:\n' + text);
-      return;
-    }
+  // Cari user yang cocok
+  const user = users.find(u => u.username === username && u.password === password);
 
-    console.log('Response API:', data);
-
-    const berhasil =
-      data.status === 'success' ||
-      data.success === true     ||
-      data.token   != null      ||
-      data.user    != null;
-
-    if (berhasil) {
-      const namaUser =
-        data.username || data.user?.username || data.name || data.user?.name || username;
-      const role =
-        data.role || data.user?.role || (username === 'admin' ? 'admin' : 'user');
-
-      localStorage.setItem('loggedUser', namaUser);
-      localStorage.setItem('role', role);
-      if (data.token) localStorage.setItem('token', data.token);
-
-      window.location.href = '../index.html';
-    } else {
-      const pesan = data.message || data.msg || data.error || 'Username atau password salah.';
-      alert('Login gagal: ' + pesan);
-    }
-
-  } catch (err) {
-    console.error('Error:', err);
-    alert('Gagal terhubung ke server. Cek koneksi internet kamu.');
-  } finally {
-    btnSubmit.textContent = originalText;
-    btnSubmit.disabled    = false;
+  if (user) {
+    localStorage.setItem('loggedUser', user.username);
+    localStorage.setItem('role', 'user');
+    window.location.href = '../index.html';
+  } else {
+    alert('Username atau password salah. Belum punya akun? Silakan daftar dulu.');
   }
 });
