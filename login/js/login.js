@@ -1,36 +1,28 @@
-document.getElementById("loginForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+// login.js – proses login via REST API
+const API = 'https://herisusanta.my.id/javalogin/api/';
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
 
-    const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+  try {
+    const res  = await fetch(API + 'login', {
+      method : 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body   : JSON.stringify({ username, password })
     });
-
     const data = await res.json();
 
-    if (data.status === "success") {
-        // simpan username
-            localStorage.setItem("username", data.username);
-            window.location.href = "../index.html";
-         
-    // } else {
-    //     document.getElementById("message").innerText = "Username / Password salah";alert("Login gagal");
-    // }
-    
+    if (data.status === 'success') {
+      localStorage.setItem('loggedUser', data.username);
+      localStorage.setItem('role', data.role);   // 'user' atau 'admin'
+      // arahkan ke halaman utama
+      window.location.href = '../index.html';
     } else {
-    const alertBox = document.getElementById("alertBox");
-    alertBox.innerText = "Username atau Password salah, silahkan coba lagi";
-    alertBox.style.display = "block";
-
-    setTimeout(() => {
-        alertBox.style.display = "none";
-    }, 3000);
-} 
-   
+      alert('Login gagal: ' + (data.message || 'Username/password salah'));
+    }
+  } catch (err) {
+    alert('Terjadi kesalahan jaringan. Coba lagi.');
+  }
 });
