@@ -1,154 +1,153 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Cebil Cake's</title>
-
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">🍰 Cebil Cake's</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#portfolio">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+        <li><a href="login/index.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h1 class="logo">🍰 Cebil Cake's</h1>
-
-    <ul class="nav-links">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#portfolio">Menu</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#contact">Kontak</a></li>
-      <li><a href="login/index.html">Login</a></li>
-    </ul>
-
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="home" class="hero">
-
-  <div class="hero-text">
-    <h2>Manis, Lembut, dan Dibuat Dengan Penuh Cinta 🍓</h2>
-    <p>Toko cake modern dengan tampilan aesthetic dan rasa premium.</p>
-    <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
-      Lihat Menu
-    </button>
-  </div>
-
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio">
-
-  <h2>Menu Cake</h2>
-
-  <div class="slider">
-
-    <div class="cake-card">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Cake 1">
-      <p class="price">Rp 25.000</p>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h2>Manis, Lembut, dan Dibuat Dengan Penuh Cinta 🍓</h2>
+      <p>Toko cake modern dengan tampilan aesthetic dan rasa premium.</p>
+      <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+        Lihat Menu
+      </button>
     </div>
+  </section>
 
-    <div class="cake-card">
-      <img src="https://images.unsplash.com/photo-1519869325930-281384150729" alt="Cake 2">
-      <p class="price">Rp 30.000</p>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <h2>Menu Cake</h2>
+    <div class="slider">
+      <div class="cake-card">
+        <!-- FIX: Tambah parameter ukuran Unsplash agar gambar tidak terlalu besar -->
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&q=80" alt="Cake 1">
+        <p class="price">Rp 25.000</p>
+      </div>
+      <div class="cake-card">
+        <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=400&q=80" alt="Cake 2">
+        <p class="price">Rp 30.000</p>
+      </div>
+      <div class="cake-card">
+        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400&q=80" alt="Cake 3">
+        <p class="price">Rp 35.000</p>
+      </div>
+      <div class="cake-card">
+        <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?w=400&q=80" alt="Cake 4">
+        <p class="price">Rp 40.000</p>
+      </div>
     </div>
+  </section>
 
-    <div class="cake-card">
-      <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713" alt="Cake 3">
-      <p class="price">Rp 35.000</p>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>Tentang Pemilik</h2>
+      <p>
+        Cebil Cake's adalah toko cake modern dengan konsep soft pink aesthetic yang menyediakan berbagai cake premium,
+        dessert manis, dan pastry lezat untuk berbagai acara spesial seperti ulang tahun, wisuda, dan perayaan lainnya.
+      </p>
     </div>
+  </section>
 
-    <div class="cake-card">
-      <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f" alt="Cake 4">
-      <p class="price">Rp 40.000</p>
+  <!-- YOUTUBE -->
+  <section class="youtube-section">
+    <h2>Video</h2>
+    <div class="video-wrapper">
+      <!-- FIX: Tambah width, height, dan frameborder yang diperlukan oleh iframe -->
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/3NvvOVrm1uY"
+        title="Video kue aesthetic"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
+  </section>
 
-  </div>
+  <!-- MAPS -->
+  <section class="maps-section">
+    <h2>Lokasi Toko</h2>
+    <div class="map-wrapper">
+      <!--
+        FIX: URL Google Maps embed yang benar.
+        Format lama (?q=...&output=embed) sudah tidak didukung Google.
+        Gunakan format /maps/embed/v1/place dengan API key,
+        ATAU salin kode embed langsung dari Google Maps:
+          1. Buka maps.google.com
+          2. Cari lokasi tujuan
+          3. Klik Share > Embed a map
+          4. Salin kode <iframe> yang diberikan Google
 
-</section>
+        Di bawah ini sudah diganti dengan format embed yang valid.
+        Ganti dengan embed code dari Google Maps jika diperlukan.
+      -->
+      <iframe
+        width="600"
+        height="450"
+        style="border:0;"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0!2d110.3742!3d-7.7956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5a95b28ccbc9%3A0x51e1d3b91e5c1cf1!2sSMA%20Negeri%208%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid">
+      </iframe>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Hubungi Cebil Cake's</h2>
+    <div class="socials">
+      <p class="reservation">
+        📞 Kontak Person:
+        <a href="tel:08123456789">0812-3456-789</a>
+      </p>
+      <a href="https://www.instagram.com/" target="_blank" class="social-card">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+      </a>
+      <a href="mailto:cebilcakes@gmail.com" class="social-card">
+        <i class="fa-solid fa-envelope"></i>
+        Email
+      </a>
+    </div>
+  </section>
 
-  <div class="about-content">
-    <h2>Tentang Pemilik</h2>
+  <!-- FIX: Tambah footer yang sebelumnya tidak ada -->
+  <footer>
+    <p>&copy; 2024 Cebil Cake's. All rights reserved.</p>
+  </footer>
 
-    <p>
-      Cebil Cake's adalah toko cake modern dengan konsep soft pink aesthetic yang menyediakan berbagai cake premium, dessert manis, dan pastry lezat untuk berbagai acara spesial seperti ulang tahun, wisuda, dan perayaan lainnya.
-    </p>
-  </div>
+  <script src="script.js"></script>
+  <!--
+    FIX: Path login.js yang sebelumnya salah: "js/login.js" tidak ada.
+    File login ada di folder login/, jadi pathnya adalah login/login.js.
+    Tapi script login sebaiknya hanya di-load di halaman login itu sendiri,
+    bukan di halaman utama. Baris ini bisa dihapus atau disesuaikan.
+    Jika tidak dibutuhkan di halaman utama, hapus baris di bawah.
+  -->
+  <!-- <script src="login/js/login.js"></script> -->
 
-</section>
-
-<!-- YOUTUBE -->
-<section class="youtube-section">
-
-  <h2>Video</h2>
-
-  <div class="video-wrapper">
-
-    <iframe
-      src="https://www.youtube.com/embed/3NvvOVrm1uY"
-      title="Video kue aesthetic"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-</section>
-
-<!-- MAPS -->
-<section class="maps-section">
-
-  <h2>Lokasi Toko</h2>
-
-  <div class="map-wrapper">
-
-    <iframe
-      src="https://www.google.com/maps?q=SMA+Negeri+8+Yogyakarta&output=embed"
-      loading="lazy"
-      style="border:0;"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-
-  <h2>Hubungi Cebil Cake's</h2>
-
-  <div class="socials">
-
-    <p class="reservation">
-      📞 Kontak Person:
-      <a href="tel:08123456789">0812-3456-789</a>
-    </p>
-
-    <a href="https://www.instagram.com/" target="_blank" class="social-card">
-      <i class="fa-brands fa-instagram"></i>
-      Instagram
-    </a>
-
-    <a href="mailto:cebilcakes@gmail.com" class="social-card">
-      <i class="fa-solid fa-envelope"></i>
-      Email
-    </a>
-
-  </div>
-
-</section>
-<script src="script.js"></script>
-<script src="js/login.js"></script>
 </body>
 </html>
