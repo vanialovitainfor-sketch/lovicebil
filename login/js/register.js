@@ -1,24 +1,27 @@
-document.getElementById("registerForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+// register.js – proses registrasi via REST API
+const API = 'https://herisusanta.my.id/javalogin/api/';
 
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+document.getElementById('registerForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
 
-    const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+  try {
+    const res  = await fetch(API + 'register', {
+      method : 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body   : JSON.stringify({ username, email, password })
     });
-
     const data = await res.json();
 
-    if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
+    if (data.status === 'success') {
+      alert('Registrasi berhasil! Silakan login.');
+      window.location.href = 'index.html';
     } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
+      alert('Registrasi gagal: ' + (data.message || 'Username sudah digunakan'));
     }
+  } catch (err) {
+    alert('Terjadi kesalahan jaringan. Coba lagi.');
+  }
 });
