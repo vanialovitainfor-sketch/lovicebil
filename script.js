@@ -72,6 +72,10 @@ function logout(){
     "loggedUser"
   );
 
+   localStorage.removeItem(
+    "role"
+  );
+  
   alert("Yey, logout berhasil!");
 
   window.location.reload();
