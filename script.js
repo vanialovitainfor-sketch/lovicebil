@@ -39,7 +39,7 @@ const authArea =
 document.getElementById("authArea");
 
 const currentUser =
-localStorage.getItem("loggedInUser");
+localStorage.getItem("loggedUser");
 
 if(currentUser){
 
