@@ -69,7 +69,7 @@ if(currentUser){
 function logout(){
 
   localStorage.removeItem(
-    "loggedInUser"
+    "loggedUser"
   );
 
   alert("Yey, logout berhasil!");
